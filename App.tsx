@@ -6,12 +6,14 @@ import { useState } from 'react';
 function Square({
   value,
   onClick,
+  className, // 添加 className 属性
 }: {
   value: string | null;
   onClick: () => void;
+  className?: string; // 定义 className 属性
 }) {
   return (
-    <button className="square" onClick={onClick}>
+    <button className={`square ${className}`} onClick={onClick}>
       {value}
     </button>
   );
@@ -27,7 +29,7 @@ function Board({
   onPlay: (nextSquares: Array<string | null>) => void;
 }) {
   const handleSquareClick = (i: number) => {
-    if (squares[i] || calculateWinner(squares)) {
+    if (squares[i] || winner.gamer) {
       return;
     }
 
@@ -42,8 +44,8 @@ function Board({
 
   const winner = calculateWinner(squares);
   let status;
-  if (winner) {
-    status = `Winner: ${winner}`;
+  if (winner.gamer) {
+    status = `Winner: ${winner.gamer}`;
   } else {
     status = `Next player: ${xIsNext ? 'X' : 'O'}`;
   }
@@ -55,6 +57,7 @@ function Board({
         <div className="board-row">
           {[0, 1, 2].map((y) => (
             <Square
+              className={winner.line?.includes(x * 3 + y) ? 'win' : ''}
               value={squares[x * 3 + y]}
               onClick={() => handleSquareClick(x * 3 + y)}
             />
@@ -111,7 +114,10 @@ export default function Game() {
   );
 }
 
-function calculateWinner(squares: Array<string | null>) {
+function calculateWinner(squares: Array<string | null>): {
+  gamer: string | null;
+  line: [number, number, number] | null;
+} {
   const lines = [
     [0, 1, 2], // top row
     [3, 4, 5], // middle row
@@ -126,8 +132,14 @@ function calculateWinner(squares: Array<string | null>) {
   for (const [a, b, c] of lines) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       // Return the winner ('X' or 'O')
-      return squares[a];
+      return {
+        gamer: squares[a] as string,
+        line: [a, b, c],
+      };
     }
   }
-  return null;
+  return {
+    gamer: null,
+    line: null,
+  };
 }

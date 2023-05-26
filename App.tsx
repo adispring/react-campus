@@ -3,12 +3,19 @@ import './styles.css';
 
 import { useState } from 'react';
 
+interface SquareItem {
+  value: 'X' | 'O';
+  move: number;
+  x: number;
+  y: number;
+}
+
 function Square({
   value,
   onClick,
   className, // 添加 className 属性
 }: {
-  value: string | null;
+  value: 'X' | 'O' | undefined | null;
   onClick: () => void;
   className?: string; // 定义 className 属性
 }) {
@@ -22,23 +29,27 @@ function Square({
 function Board({
   xIsNext,
   squares,
+  currentMove,
   onPlay,
 }: {
   xIsNext: boolean;
-  squares: Array<string | null>;
-  onPlay: (nextSquares: Array<string | null>) => void;
+  squares: Array<SquareItem | null>;
+  currentMove: number;
+  onPlay: (nextSquares: Array<SquareItem | null>) => void;
 }) {
-  const handleSquareClick = (i: number) => {
+  const handleSquareClick = (x: number, y: number) => {
+    const i = x * 3 + y;
     if (squares[i] || winner.gamer) {
       return;
     }
 
     const newSquares = [...squares];
-    if (xIsNext) {
-      newSquares[i] = 'X';
-    } else {
-      newSquares[i] = 'O';
-    }
+    newSquares[i] = {
+      value: xIsNext ? 'X' : 'O',
+      x,
+      y,
+      move: currentMove,
+    };
     onPlay(newSquares);
   };
 
@@ -58,8 +69,8 @@ function Board({
           {[0, 1, 2].map((y) => (
             <Square
               className={winner.line?.includes(x * 3 + y) ? 'win' : ''}
-              value={squares[x * 3 + y]}
-              onClick={() => handleSquareClick(x * 3 + y)}
+              value={squares[x * 3 + y]?.value}
+              onClick={() => handleSquareClick(x, y)}
             />
           ))}
         </div>
@@ -74,7 +85,7 @@ export default function Game() {
   const currentSquares = history[currentMove];
   const xIsNext = currentMove % 2 === 0;
 
-  function handlePlay(nextSquares: Array<string | null>) {
+  function handlePlay(nextSquares: Array<SquareItem | null>) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
@@ -87,9 +98,13 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let desc;
     if (move === currentMove) {
-      desc = `You are at move #${move}`;
+      console.log('current squares', squares);
+      const coordinates = squares.find((x) => x?.move === currentMove - 1);
+      desc = `You are at move #${move}, coordinates: (${coordinates?.x}, ${coordinates?.y})`;
     } else {
-      desc = `Go to move #${move}`;
+      console.log('squares', squares);
+      const coordinates = squares.find((x) => x?.move === move - 1);
+      desc = `Go to move #${move}, coordinates: (${coordinates?.x}, ${coordinates?.y})`;
     }
     return (
       <li key={move}>
@@ -105,7 +120,12 @@ export default function Game() {
   return (
     <div className="game">
       <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        <Board
+          xIsNext={xIsNext}
+          squares={currentSquares}
+          currentMove={currentMove}
+          onPlay={handlePlay}
+        />
       </div>
       <div className="game-info">
         <ol>{moves}</ol>
@@ -114,7 +134,7 @@ export default function Game() {
   );
 }
 
-function calculateWinner(squares: Array<string | null>): {
+function calculateWinner(squares: Array<SquareItem | null>): {
   gamer: string | null;
   line: [number, number, number] | null;
 } {
@@ -130,10 +150,14 @@ function calculateWinner(squares: Array<string | null>): {
   ];
 
   for (const [a, b, c] of lines) {
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    if (
+      squares[a]?.value &&
+      squares[a]?.value === squares[b]?.value &&
+      squares[a]?.value === squares[c]?.value
+    ) {
       // Return the winner ('X' or 'O')
       return {
-        gamer: squares[a] as string,
+        gamer: (squares[a] as SquareItem).value,
         line: [a, b, c],
       };
     }

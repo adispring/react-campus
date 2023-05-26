@@ -1727,6 +1727,25 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
+"css-loader@6.7.4":
+  "integrity" "sha1-pdjsKKc/PggjmYz+4qH35WS5H5s="
+  "resolved" "https://r.npm.sankuai.com/css-loader/download/css-loader-6.7.4.tgz"
+  "version" "6.7.4"
+  dependencies:
+    "icss-utils" "^5.1.0"
+    "postcss" "^8.4.21"
+    "postcss-modules-extract-imports" "^3.0.0"
+    "postcss-modules-local-by-default" "^4.0.1"
+    "postcss-modules-scope" "^3.0.0"
+    "postcss-modules-values" "^4.0.0"
+    "postcss-value-parser" "^4.2.0"
+    "semver" "^7.3.8"
+
+"cssesc@^3.0.0":
+  "integrity" "sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4="
+  "resolved" "https://r.npm.sankuai.com/cssesc/download/cssesc-3.0.0.tgz"
+  "version" "3.0.0"
+
 "csstype@^3.0.2":
   "integrity" "sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ=="
   "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
@@ -2019,6 +2038,11 @@
   "resolved" "https://r.npm.sankuai.com/fs.realpath/download/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fsevents@~2.3.2":
+  "integrity" "sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro="
+  "resolved" "https://r.npm.sankuai.com/fsevents/download/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
+
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -2187,6 +2211,11 @@
   "version" "0.4.24"
   dependencies:
     "safer-buffer" ">= 2.1.2 < 3"
+
+"icss-utils@^5.0.0", "icss-utils@^5.1.0":
+  "integrity" "sha1-xr5oWKvQE9do6YNmrkfiXViHsa4="
+  "resolved" "https://r.npm.sankuai.com/icss-utils/download/icss-utils-5.1.0.tgz"
+  "version" "5.1.0"
 
 "import-local@^3.0.2":
   "integrity" "sha512-ASB07uLtnDs1o6EHjKpX34BKYDSqnFerfTOJL2HvMqF70LnxpjkzDB8J44oT9pu4AMPkQwf8jl6szgvNd2tRIg=="
@@ -2392,6 +2421,13 @@
   dependencies:
     "yallist" "^3.0.2"
 
+"lru-cache@^6.0.0":
+  "integrity" "sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ="
+  "resolved" "https://r.npm.sankuai.com/lru-cache/download/lru-cache-6.0.0.tgz"
+  "version" "6.0.0"
+  dependencies:
+    "yallist" "^4.0.0"
+
 "make-dir@^3.0.2":
   "integrity" "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
   "resolved" "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz"
@@ -2490,6 +2526,11 @@
   dependencies:
     "dns-packet" "^5.2.2"
     "thunky" "^1.0.2"
+
+"nanoid@^3.3.6":
+  "integrity" "sha1-RDOAyFbW6fmCQmfZYLQjatWD6kw="
+  "resolved" "https://r.npm.sankuai.com/nanoid/download/nanoid-3.3.6.tgz"
+  "version" "3.3.6"
 
 "negotiator@0.6.3":
   "integrity" "sha1-WOMjpy/twNb5zU0x/kn1FHlZDM0="
@@ -2641,6 +2682,56 @@
   "version" "4.2.0"
   dependencies:
     "find-up" "^4.0.0"
+
+"postcss-modules-extract-imports@^3.0.0":
+  "integrity" "sha1-zaHwR8CugMl9vijD52pDuIAldB0="
+  "resolved" "https://r.npm.sankuai.com/postcss-modules-extract-imports/download/postcss-modules-extract-imports-3.0.0.tgz"
+  "version" "3.0.0"
+
+"postcss-modules-local-by-default@^4.0.1":
+  "integrity" "sha1-e+rmu5nuW/4dgnOw1Ho0YyCeXO8="
+  "resolved" "https://r.npm.sankuai.com/postcss-modules-local-by-default/download/postcss-modules-local-by-default-4.0.1.tgz"
+  "version" "4.0.1"
+  dependencies:
+    "icss-utils" "^5.0.0"
+    "postcss-selector-parser" "^6.0.2"
+    "postcss-value-parser" "^4.1.0"
+
+"postcss-modules-scope@^3.0.0":
+  "integrity" "sha1-nvMVFFbTu/oSDKRImN/Kby+gHwY="
+  "resolved" "https://r.npm.sankuai.com/postcss-modules-scope/download/postcss-modules-scope-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "postcss-selector-parser" "^6.0.4"
+
+"postcss-modules-values@^4.0.0":
+  "integrity" "sha1-18Xn5ow7s8myfL9Iyguz/7RgLJw="
+  "resolved" "https://r.npm.sankuai.com/postcss-modules-values/download/postcss-modules-values-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "icss-utils" "^5.0.0"
+
+"postcss-selector-parser@^6.0.2", "postcss-selector-parser@^6.0.4":
+  "integrity" "sha1-0F2NdrHo4XMlfvnWC3Bqjl6Zvxs="
+  "resolved" "https://r.npm.sankuai.com/postcss-selector-parser/download/postcss-selector-parser-6.0.13.tgz"
+  "version" "6.0.13"
+  dependencies:
+    "cssesc" "^3.0.0"
+    "util-deprecate" "^1.0.2"
+
+"postcss-value-parser@^4.1.0", "postcss-value-parser@^4.2.0":
+  "integrity" "sha1-cjwJkgg2um0+WvAZ+SvAlxwC5RQ="
+  "resolved" "https://r.npm.sankuai.com/postcss-value-parser/download/postcss-value-parser-4.2.0.tgz"
+  "version" "4.2.0"
+
+"postcss@^8.1.0", "postcss@^8.4.21":
+  "integrity" "sha1-3wrumsfF5T4QdcJKNhNJb55lUqs="
+  "resolved" "https://r.npm.sankuai.com/postcss/download/postcss-8.4.23.tgz"
+  "version" "8.4.23"
+  dependencies:
+    "nanoid" "^3.3.6"
+    "picocolors" "^1.0.0"
+    "source-map-js" "^1.0.2"
 
 "process-nextick-args@~2.0.0":
   "integrity" "sha1-eCDZsWEgzFXKmud5JoCufbptf+I="
@@ -2898,6 +2989,13 @@
   "resolved" "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
   "version" "6.3.0"
 
+"semver@^7.3.8":
+  "integrity" "sha1-yQxNYxz3RyDkayHB036gft+rkew="
+  "resolved" "https://r.npm.sankuai.com/semver/download/semver-7.5.1.tgz"
+  "version" "7.5.1"
+  dependencies:
+    "lru-cache" "^6.0.0"
+
 "send@0.18.0":
   "integrity" "sha1-ZwFnzGVLBfWqSnZ/kRO7NxvHBr4="
   "resolved" "https://r.npm.sankuai.com/send/download/send-0.18.0.tgz"
@@ -3004,6 +3102,11 @@
     "uuid" "^8.3.2"
     "websocket-driver" "^0.7.4"
 
+"source-map-js@^1.0.2":
+  "integrity" "sha1-rbw2HZxi3zgBJefxYfccgm8eSQw="
+  "resolved" "https://r.npm.sankuai.com/source-map-js/download/source-map-js-1.0.2.tgz"
+  "version" "1.0.2"
+
 "source-map-support@~0.5.20":
   "integrity" "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w=="
   "resolved" "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz"
@@ -3068,6 +3171,11 @@
   "integrity" "sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0="
   "resolved" "https://r.npm.sankuai.com/strip-final-newline/download/strip-final-newline-2.0.0.tgz"
   "version" "2.0.0"
+
+"style-loader@3.3.3":
+  "integrity" "sha1-u6jarBmTAWnAyclnBnSaWXrjrP8="
+  "resolved" "https://r.npm.sankuai.com/style-loader/download/style-loader-3.3.3.tgz"
+  "version" "3.3.3"
 
 "supports-color@^5.3.0":
   "integrity" "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="
@@ -3192,7 +3300,7 @@
   dependencies:
     "punycode" "^2.1.0"
 
-"util-deprecate@^1.0.1", "util-deprecate@~1.0.1":
+"util-deprecate@^1.0.1", "util-deprecate@^1.0.2", "util-deprecate@~1.0.1":
   "integrity" "sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8="
   "resolved" "https://r.npm.sankuai.com/util-deprecate/download/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
@@ -3306,7 +3414,7 @@
   "resolved" "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   "version" "3.2.3"
 
-"webpack@^4.0.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", "webpack@^5.1.0", "webpack@^5.84.1", "webpack@>=5", "webpack@5.x.x":
+"webpack@^4.0.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", "webpack@^5.0.0", "webpack@^5.1.0", "webpack@^5.84.1", "webpack@>=5", "webpack@5.x.x":
   "integrity" "sha512-ZP4qaZ7vVn/K8WN/p990SGATmrL1qg4heP/MrVneczYtpDGJWlrgZv55vxaV2ul885Kz+25MP2kSXkPe3LZfmg=="
   "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.84.1.tgz"
   "version" "5.84.1"
@@ -3376,3 +3484,8 @@
   "integrity" "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="
   "resolved" "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
   "version" "3.1.1"
+
+"yallist@^4.0.0":
+  "integrity" "sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI="
+  "resolved" "https://r.npm.sankuai.com/yallist/download/yallist-4.0.0.tgz"
+  "version" "4.0.0"

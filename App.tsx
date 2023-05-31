@@ -6,6 +6,12 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 import Game from './components/Game';
 import Mobx from './components/Mobx';
+import MobxTodoList, { Todo, TodoList } from './components/MobxTodoList';
+
+const store = new TodoList([
+  new Todo('Get Coffee'),
+  new Todo('Write simpler code'),
+]);
 
 const App = () => {
   return (
@@ -15,6 +21,10 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/game" element={<Game />} />
         <Route path="/mobx" element={<Mobx />} />
+        <Route
+          path="/mobx-todo-list"
+          element={<MobxTodoList todoList={store} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

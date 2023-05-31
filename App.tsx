@@ -5,7 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import NotFound from './components/NotFound';
 import Game from './components/Game';
-import Mobx from './components/mobx';
+import Mobx from './components/Mobx1';
 
 const App = () => {
   return (

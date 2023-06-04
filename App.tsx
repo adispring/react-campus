@@ -7,11 +7,16 @@ import NotFound from './components/NotFound';
 import Game from './components/Game';
 import Mobx from './components/Mobx';
 import MobxTodoList, { Todo, TodoList } from './components/MobxTodoList';
+import { autorun } from 'mobx';
 
 const store = new TodoList([
   new Todo('Get Coffee'),
   new Todo('Write simpler code'),
 ]);
+
+autorun(() => {
+  console.log('Tasks left: ' + store.unfinishedTodoCount);
+});
 
 const App = () => {
   return (

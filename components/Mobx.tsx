@@ -1,17 +1,23 @@
 import React from 'react';
-import { observable, action, makeObservable, makeAutoObservable } from 'mobx';
+import {
+  observable,
+  action,
+  makeObservable,
+  makeAutoObservable,
+  runInAction,
+} from 'mobx';
 import { observer } from 'mobx-react';
 
 class CounterStore {
   count = 0;
 
   constructor() {
-    makeAutoObservable(this);
-    // makeObservable(this, {
-    //   count: observable,
-    //   increment: action,
-    //   decrement: action,
-    // });
+    // makeAutoObservable(this, {}, { autoBind: true });
+    makeObservable(this, {
+      count: observable,
+      increment: action.bound,
+      decrement: action,
+    });
   }
 
   increment() {
@@ -25,10 +31,14 @@ class CounterStore {
 
 const counterStore = new CounterStore();
 
+runInAction(() => {
+  counterStore.count = 100;
+});
+
 const Counter = observer(() => (
   <div>
     <p>Count: {counterStore.count}</p>
-    <button onClick={() => counterStore.increment()}>+</button>
+    <button onClick={counterStore.increment}>+</button>
     <button onClick={counterStore.decrement}>-</button>
   </div>
 ));

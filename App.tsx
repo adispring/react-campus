@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { autorun } from 'mobx';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -7,8 +8,10 @@ import NotFound from './components/NotFound';
 import Game from './components/Game';
 import Mobx from './components/Mobx';
 import MobxTodoList, { Todo, TodoList } from './components/MobxTodoList';
-import TimerView, { myTimer } from './components/MobxReact';
-import { autorun } from 'mobx';
+import TimerView, { Timer, myTimer } from './components/MobxReact';
+import TimerViewUseContext, {
+  TimerContext,
+} from './components/MobxReactContext';
 
 const store = new TodoList([
   new Todo('Get Coffee'),
@@ -37,6 +40,14 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
         <Route path="/mobx-react" element={<TimerView timer={myTimer} />} />
+        <Route
+          path="/mobx-react-context"
+          element={
+            <TimerContext.Provider value={myTimer}>
+              <TimerViewUseContext />
+            </TimerContext.Provider>
+          }
+        />
       </Routes>
     </Router>
   );

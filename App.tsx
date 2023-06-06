@@ -7,6 +7,7 @@ import NotFound from './components/NotFound';
 import Game from './components/Game';
 import Mobx from './components/Mobx';
 import MobxTodoList, { Todo, TodoList } from './components/MobxTodoList';
+import TimerView, { myTimer } from './components/MobxReact';
 import { autorun } from 'mobx';
 
 const store = new TodoList([
@@ -17,6 +18,10 @@ const store = new TodoList([
 autorun(() => {
   console.log('Tasks left: ' + store.unfinishedTodoCount);
 });
+
+setInterval(() => {
+  myTimer.increaseTimer();
+}, 1000);
 
 const App = () => {
   return (
@@ -31,6 +36,7 @@ const App = () => {
           element={<MobxTodoList todoList={store} />}
         />
         <Route path="*" element={<NotFound />} />
+        <Route path="/mobx-react" element={<TimerView timer={myTimer} />} />
       </Routes>
     </Router>
   );

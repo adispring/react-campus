@@ -7,6 +7,7 @@ import {
   runInAction,
 } from 'mobx';
 import { observer } from 'mobx-react';
+import '../utils/computed';
 
 class CounterStore {
   count = 0;

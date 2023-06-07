@@ -1,22 +1,6 @@
 import React from 'react';
-import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react-lite';
-
-export class Timer {
-  secondsPassed = 0;
-
-  constructor() {
-    makeAutoObservable(this);
-  }
-
-  increaseTimer() {
-    this.secondsPassed += 1;
-  }
-
-  resetTimer() {
-    this.secondsPassed = 0;
-  }
-}
+import { Timer } from '../stores/Timer';
 
 export const myTimer = new Timer();
 

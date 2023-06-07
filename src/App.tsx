@@ -8,7 +8,7 @@ import NotFound from './components/NotFound';
 import Game from './components/Game';
 import Mobx from './components/Mobx';
 import MobxTodoList, { Todo, TodoList } from './components/MobxTodoList';
-import TimerView, { Timer, myTimer } from './components/MobxReact';
+import TimerView, { myTimer } from './components/MobxReact';
 import TimerViewUseContext, {
   TimerContext,
 } from './components/MobxReactContext';

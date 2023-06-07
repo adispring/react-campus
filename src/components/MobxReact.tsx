@@ -4,6 +4,10 @@ import { Timer } from '../stores/Timer';
 
 export const myTimer = new Timer();
 
+setInterval(() => {
+  myTimer.increaseTimer();
+}, 1000);
+
 const TimerView = observer(({ timer }: { timer: Timer }) => (
   <span>Seconds passed: {timer.secondsPassed}</span>
 ));

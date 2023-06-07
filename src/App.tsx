@@ -12,6 +12,7 @@ import TimerView, { myTimer } from './components/MobxReact';
 import TimerViewUseContext, {
   TimerContext,
 } from './components/MobxReactContext';
+import MobxUseState from './components/MobxUseState';
 
 const store = new TodoList([
   new Todo('Get Coffee'),
@@ -21,10 +22,6 @@ const store = new TodoList([
 autorun(() => {
   console.log('Tasks left: ' + store.unfinishedTodoCount);
 });
-
-setInterval(() => {
-  myTimer.increaseTimer();
-}, 1000);
 
 const App = () => {
   return (
@@ -48,6 +45,7 @@ const App = () => {
             </TimerContext.Provider>
           }
         />
+        <Route path="/mobx-use-state" element={<MobxUseState />} />
       </Routes>
     </Router>
   );

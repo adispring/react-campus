@@ -13,6 +13,11 @@ import TimerViewUseContext, {
   TimerContext,
 } from './components/MobxReactContext';
 import MobxUseState from './components/MobxUseState';
+import PureTodoList from './components/TodoList';
+import Count from './components/Count';
+import Profile from './components/Profile';
+
+import profileImg from './images/profile.jpg';
 
 const store = new TodoList([
   new Todo('Get Coffee'),
@@ -46,6 +51,12 @@ const App = () => {
           }
         />
         <Route path="/mobx-use-state" element={<MobxUseState />} />
+        <Route path="/todo-list" element={<PureTodoList />} />
+        <Route path="/counter" element={<Count />} />
+        <Route
+          path="/profile"
+          element={<Profile imgUrl={profileImg} name="Jobs" />}
+        />
       </Routes>
     </Router>
   );

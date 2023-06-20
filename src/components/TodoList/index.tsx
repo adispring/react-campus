@@ -5,19 +5,16 @@ import Item from './Item';
 
 const TodoList = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [inputValue, setInputValue] = useState<string>('');
 
   /** 添加 todo */
-  const handleAddTodo = () => {
-    setTodos([...todos, { id: Date.now(), text: inputValue, completed: false }]);
-    setInputValue('');
-  };
+  const handleAddTodo = (value: string) =>
+    setTodos([...todos, { id: Date.now(), text: value, completed: false }]);
 
   /** 删除 todo */
-  const handleDeleteTodo = (id: number) => setTodos(todos.filter((todo) => todo.id !== id));
+  const handleDelete = (id: number) => setTodos(todos.filter((todo) => todo.id !== id));
 
   /** 切换 todo 的完成状态 */
-  const handleToggleTodo = (id: number) =>
+  const handleToggle = (id: number) =>
     setTodos(
       todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
     );
@@ -25,15 +22,10 @@ const TodoList = (): JSX.Element => {
   return (
     <div>
       <h1>Todo List</h1>
-      <Input value={inputValue} onChange={setInputValue} onAddTodo={handleAddTodo} />
+      <Input onAddTodo={handleAddTodo} />
       <ul>
         {todos.map((todo) => (
-          <Item
-            key={todo.id}
-            todo={todo}
-            onDeleteTodo={handleDeleteTodo}
-            onToggleTodo={handleToggleTodo}
-          />
+          <Item key={todo.id} todo={todo} onDelete={handleDelete} onToggle={handleToggle} />
         ))}
       </ul>
     </div>

@@ -1,0 +1,29 @@
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+  font-size: 50px;
+}
+
+.input-container input {
+  height: 80px;
+  flex: 1;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-container button {
+  font-size: 32px;
+  background-color: #0069d9;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}

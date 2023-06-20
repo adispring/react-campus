@@ -1,15 +1,18 @@
 import React from 'react';
-import { ItemProps } from './interfaces';
+import { ItemProps } from '../interfaces';
+import './styles.css';
 
 const Item = ({ todo, onDelete, onToggle }: ItemProps): JSX.Element => (
-  <li>
+  <li className="item">
     <span
       style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
       onClick={() => onToggle(todo.id)}
     >
       {todo.text}
     </span>
-    <button onClick={() => onDelete(todo.id)}>Delete</button>
+    <button className="delete" onClick={() => onDelete(todo.id)}>
+      Delete
+    </button>
   </li>
 );
 

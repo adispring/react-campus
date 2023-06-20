@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Todo } from './interfaces';
 import Input from './Input';
 import Item from './Item';
+import { initialTodoList } from './constants';
+
+import './styles.css';
 
 const TodoList = (): JSX.Element => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(initialTodoList);
 
   /** 添加 todo */
   const handleAddTodo = (value: string) =>
@@ -22,8 +25,8 @@ const TodoList = (): JSX.Element => {
   return (
     <div>
       <h1>Todo List</h1>
-      <Input onAddTodo={handleAddTodo} />
-      <ul>
+      <Input onAdd={handleAddTodo} />
+      <ul className="content">
         {todos.map((todo) => (
           <Item key={todo.id} todo={todo} onDelete={handleDelete} onToggle={handleToggle} />
         ))}

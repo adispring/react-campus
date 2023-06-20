@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.item.completed {
+  background-color: #f5f5f5;
+  text-decoration: line-through;
+}
+
+.item .text {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.item .delete {
+  cursor: pointer;
+  font-size: 32px;
+}
+.item button {
+  background-color: #f56c6c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}

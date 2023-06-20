@@ -19,10 +19,7 @@ export interface InputProps {
   /** 输入框的值 */
   value: string;
 
-  /**
-   * 输入框值改变时的回调函数
-   * @param value 输入框的值
-   */
+  /** 输入框值改变时的回调函数 */
   onChange: (value: string) => void;
 
   /** 添加待办事项的回调函数 */
@@ -36,15 +33,9 @@ export interface ItemProps {
   /** 待办事项数据 */
   todo: Todo;
 
-  /**
-   * 删除待办事项的回调函数
-   * @param id 待办事项的唯一标识
-   */
+  /** 删除待办事项的回调函数 */
   onDeleteTodo: (id: number) => void;
 
-  /**
-   * 切换待办事项完成状态的回调函数
-   * @param id 待办事项的唯一标识
-   */
+  /** 切换待办事项完成状态的回调函数 */
   onToggleTodo: (id: number) => void;
 }

@@ -12,7 +12,11 @@ const Input = ({ onAdd }: InputProps): JSX.Element => {
 
   return (
     <div className="input-container">
-      <input type="text" value={value} onChange={(event) => setValue(event.target.value)} />
+      <input
+        type="text"
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
       <button onClick={handleClick}>添加TODO</button>
     </div>
   );

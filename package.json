@@ -12,12 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "mobx": "^6.9.0",
     "mobx-react": "^7.6.0",
     "mobx-react-lite": "^3.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
     "react-router-dom": "^6.11.2",
+    "redux": "^4.2.1",
     "typescript": "^5.0.4"
   },
   "devDependencies": {

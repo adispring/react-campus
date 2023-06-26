@@ -7,12 +7,16 @@ import { initialTodoList } from './constants';
 import './styles.css';
 
 const TodoList = (): JSX.Element => {
-  /** todo 列表数据源 */
+  /** todo list 数据源 */
   const [todos, setTodos] = useState<Todo[]>(initialTodoList);
 
   /** 添加 todo */
   const handleAdd = (value: string) =>
     setTodos([...todos, { id: Date.now(), text: value, completed: false }]);
+
+  /** 删除 todo */
+  const handleDelete = (id: number) =>
+    setTodos(todos.filter((todo) => todo.id !== id));
 
   /** 切换 todo 的完成状态 */
   const handleToggle = (id: number) =>
@@ -21,10 +25,6 @@ const TodoList = (): JSX.Element => {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
-
-  /** 删除 todo */
-  const handleDelete = (id: number) =>
-    setTodos(todos.filter((todo) => todo.id !== id));
 
   return (
     <div>

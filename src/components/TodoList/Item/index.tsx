@@ -2,7 +2,7 @@ import React from 'react';
 import { ItemProps } from '../interfaces';
 import './styles.css';
 
-const Item = ({ todo, onDelete, onToggle }: ItemProps): JSX.Element => (
+const Item = ({ todo, onToggle, onDelete }: ItemProps): JSX.Element => (
   <li className="item">
     <span
       style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}

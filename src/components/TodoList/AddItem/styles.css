@@ -1,4 +1,4 @@
-.input-container {
+.add-item-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,16 +7,17 @@
   font-size: 50px;
 }
 
-.input-container input {
+.add-item-container input {
   height: 80px;
   flex: 1;
   padding: 10px;
   margin-right: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 50px;
 }
 
-.input-container button {
+.add-item-container button {
   font-size: 32px;
   background-color: #0069d9;
   border: none;

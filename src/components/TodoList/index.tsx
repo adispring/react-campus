@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Todo } from './interfaces';
-import Input from './Input';
+import AddItem from './AddItem';
 import Item from './Item';
 import { initialTodoList } from './constants';
 
@@ -12,7 +12,7 @@ const TodoList = (): JSX.Element => {
 
   /** 添加 todo */
   const handleAdd = (value: string) =>
-    setTodos([...todos, { id: Date.now(), text: value, completed: false }]);
+    setTodos([{ id: Date.now(), text: value, completed: false }, ...todos]);
 
   /** 删除 todo */
   const handleDelete = (id: number) =>
@@ -29,7 +29,7 @@ const TodoList = (): JSX.Element => {
   return (
     <div>
       <h1>Todo List</h1>
-      <Input onAdd={handleAdd} />
+      <AddItem onAdd={handleAdd} />
       <ul className="content">
         {todos.map((todo) => (
           <Item

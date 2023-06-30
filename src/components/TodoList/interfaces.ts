@@ -5,8 +5,8 @@ export interface Todo {
   completed: boolean;
 }
 
-/** Input 组件的 Props */
-export interface InputProps {
+/** AddItem 组件的 Props */
+export interface AddItemProps {
   onAdd: (value: string) => void;
 }
 

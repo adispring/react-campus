@@ -31,7 +31,13 @@ function withWindowListener<T extends WithWindowListenerProps>(
     }
 
     render() {
-      return <WrappedComponent {...(this.props as T)} />;
+      return (
+        <WrappedComponent
+          {...(this.props as T)}
+          windowHeight={this.state.height}
+          windowWidth={this.state.width}
+        />
+      );
     }
   };
 }

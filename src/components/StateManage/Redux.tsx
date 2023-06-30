@@ -32,8 +32,8 @@ const Counter = (
   props: ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 ) => (
   <div>
+    <div>{props.count}</div>
     <button onClick={props.decrement}>-</button>
-    <span>{props.count}</span>
     <button onClick={props.increment}>+</button>
   </div>
 );

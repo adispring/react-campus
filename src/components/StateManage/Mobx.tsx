@@ -20,8 +20,8 @@ const store = new CounterStore();
 // 3 定义使用 store 的 Counter 组件
 const Counter = observer(({ store }: { store: CounterStore }) => (
   <div>
+    <div>{store.count}</div>
     <button onClick={store.decrement}>-</button>
-    <span>{store.count}</span>
     <button onClick={store.increment}>+</button>
   </div>
 ));
